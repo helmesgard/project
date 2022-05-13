@@ -2,6 +2,8 @@ import random
 import pygame
 import sys
 import pygame_menu
+import os
+os.system("Tetris.py")
 
 pygame.init()
 bg_image = pygame.image.load("6.jpg")
@@ -271,6 +273,9 @@ def start_the_game_2():
         pygame.display.flip()
         timer.tick(5 + speed)
 
+def qwe():
+    return os.system("Tetris.py")
+
 
 menu = pygame_menu.Menu('Добро пожаловать!', 460, 300,
                         theme=pygame_menu.themes.THEME_GREEN)
@@ -278,6 +283,7 @@ menu = pygame_menu.Menu('Добро пожаловать!', 460, 300,
 menu.add.text_input('Name :', default='Player 1')
 menu.add.button('level 1', start_the_game)
 menu.add.button('level 2', start_the_game_2)
+menu.add.button('level 3', qwe)
 menu.add.button('Quit', pygame_menu.events.EXIT)
 while True:
     screen.blit(bg_image, (0, 0))
